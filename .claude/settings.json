@@ -1,0 +1,125 @@
+{
+  "agents": {
+    "video-producer": {
+      "description": "Remotion動画制作全体を管理するマスターエージェント。動画制作ワークフロー全体を自動で実行。",
+      "tools": ["Read", "Write", "Bash", "Glob", "Grep", "Task"],
+      "model": "sonnet"
+    },
+    "srt-converter": {
+      "description": "SRTファイルをRemotion用のsubtitleDataに変換する専門エージェント。SRT変換タスクに自動で使用。",
+      "tools": ["Read", "Write", "Glob"],
+      "skills": ["srt-rules"],
+      "model": "haiku"
+    },
+    "sync-adjuster": {
+      "description": "音声とテロップのタイミング同期を診断・修正する専門エージェント。慎重に修正を行う。",
+      "tools": ["Read", "Write", "Edit", "Glob"],
+      "skills": ["sync-rules"],
+      "model": "haiku"
+    },
+    "subtitle-adjuster": {
+      "description": "テロップの診断・修正を行う専門エージェント。テロップ微調整タスクに自動で使用。",
+      "tools": ["Read", "Write", "Edit", "Glob"],
+      "skills": ["subtitle-rules"],
+      "model": "haiku"
+    },
+    "sentence-editor": {
+      "description": "文単位で誤字修正・固有名詞変換を行う専門エージェント。文編集タスクに自動で使用。",
+      "tools": ["Read", "Write", "Edit", "Glob"],
+      "skills": ["sentence-rules"],
+      "model": "haiku"
+    },
+    "title-generator": {
+      "description": "動画の左上に表示するキャッチコピーを生成する専門エージェント。タイトル生成タスクに自動で使用。",
+      "tools": ["Read", "Write"],
+      "skills": ["title-rules"],
+      "model": "haiku"
+    },
+    "se-placer": {
+      "description": "効果音（SE）を適切な箇所に配置する専門エージェント。SE配置タスクに自動で使用。",
+      "tools": ["Read", "Write", "Edit", "Glob"],
+      "skills": ["se-rules"],
+      "model": "haiku"
+    },
+    "prompt-generator": {
+      "description": "字幕データから画像プロンプトを生成する専門エージェント。画像プロンプト生成タスクに自動で使用。",
+      "tools": ["Read", "Write", "Glob"],
+      "skills": ["prompt-rules"],
+      "model": "haiku"
+    },
+    "image-inserter": {
+      "description": "生成された画像を動画に挿入する専門エージェント。画像挿入タスクに自動で使用。",
+      "tools": ["Read", "Write", "Edit", "Glob"],
+      "skills": ["image-insert-rules"],
+      "model": "haiku"
+    },
+    "thumbnail-inserter": {
+      "description": "テロップに合わせてサムネイル画像・動画をスライドイン挿入する専門エージェント。",
+      "tools": ["Read", "Write", "Edit", "Glob", "Grep"],
+      "skills": ["thumbnail-rules"],
+      "model": "haiku"
+    }
+  },
+  "skills": {
+    "srt-rules": {
+      "description": "SRT変換のルールと基準。タイムスタンプ変換、style自動判定、highlight抽出の知識を提供。"
+    },
+    "sync-rules": {
+      "description": "音声同期のルールと診断基準。SRTとsubtitleDataのタイミング比較、ずれの検出と慎重な修正方法を提供。"
+    },
+    "subtitle-rules": {
+      "description": "テロップ調整のルールと診断基準。字幕の品質チェック、改行ルール、タイミング調整の知識を提供。"
+    },
+    "sentence-rules": {
+      "description": "文編集のルールと基準。誤字修正、固有名詞、文の区切りの知識を提供。"
+    },
+    "title-rules": {
+      "description": "タイトル生成のルールと基準。キャッチコピー抽出、表示タイミングの知識を提供。"
+    },
+    "se-rules": {
+      "description": "SE配置のルールと基準。効果音の選択、配置タイミング、音量調整の知識を提供。"
+    },
+    "prompt-rules": {
+      "description": "画像プロンプト生成のルールと基準。図解/フォトリアル判定、プロンプトテンプレートの知識を提供。"
+    },
+    "image-insert-rules": {
+      "description": "画像挿入のルールと基準。タイミング計算、連続画像の処理、タイプ判定の知識を提供。"
+    },
+    "thumbnail-rules": {
+      "description": "サムネイル挿入のルールと基準。扇状配置、スライドインSE、終了タイミング決定の知識を提供。"
+    },
+    "gemini-image-generator": {
+      "description": "Gemini NanoBananaを使った画像生成。ブラウザ自動化で画像を生成。"
+    }
+  },
+  "commands": {
+    "/video": "video-producer エージェントを起動して動画制作ワークフローを実行",
+    "/transcribe": "Whisper APIで音声からSRTを生成",
+    "/transcribe-workflow": "音声→字幕の完全ワークフローを実行",
+    "/convert-srt": "srt-converter エージェントでSRT変換",
+    "/sync-subtitles": "sync-adjuster エージェントで音声同期チェック",
+    "/adjust-subtitles": "subtitle-adjuster エージェントでテロップ調整",
+    "/edit-sentences": "sentence-editor エージェントで文編集",
+    "/apply-subtitle-template": "テロップテンプレートを新プロジェクトに適用",
+    "/add-title": "title-generator エージェントでタイトル生成",
+    "/add-se": "se-placer エージェントでSE配置",
+    "/add-thumbnail": "thumbnail-inserter エージェントでサムネイル挿入",
+    "/generate-illustration-prompts": "prompt-generator エージェントでプロンプト生成",
+    "/generate-and-insert-images": "image-inserter エージェントで画像挿入",
+    "/setup-remotion": "新規Remotionプロジェクトをセットアップ"
+  },
+  "project": {
+    "fps": 25,
+    "resolution": "1920x1080",
+    "framework": "remotion",
+    "paths": {
+      "subtitleData": "src/Subtitles/subtitleData.ts",
+      "insertImageData": "src/InsertImage/insertImageData.ts",
+      "seData": "src/SoundEffects/seData.ts",
+      "titleData": "src/Title/titleData.ts",
+      "images": "public/挿入画像/",
+      "videos": "public/挿入動画/",
+      "soundEffects": "public/se/"
+    }
+  }
+}
