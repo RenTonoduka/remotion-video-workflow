@@ -110,6 +110,39 @@ scripts/
 | `image-inserter` | 画像挿入 |
 | `thumbnail-inserter` | サムネイル挿入 |
 
+## Fable品質モード（Opus 4.8 対応）
+
+Opus 4.8 など Fable 以外のモデルでも、Fable 相当の品質（抜け漏れ検出・自己検証・
+人間的な報告）で作業させるためのスキル群です。トークン消費を抑えるため、
+常時読み込まれるのはルーティング用の CLAUDE.md（約20行）だけで、
+詳細ルールは必要な時にだけスキルとして読み込まれます。
+
+| スキル | 内容 | 読み込まれるタイミング |
+|--------|------|----------------------|
+| `fable-core` | 思考原則（結論ファースト、自己検証、影響範囲の列挙、スコープの節度） | コード変更の前 |
+| `fable-check` | 抜け漏れ検査チェックリスト（リネーム漏れ、呼び出し元破壊、データ契約、ドキュメント矛盾） | コード変更の完了前 |
+| `fable-refactor` | 挙動を変えないリファクタリング手順 | リファクタ依頼時 |
+
+Fable と Opus 4.8 の差分分析は `.claude/skills/fable-core/references/fable-vs-opus.md` を参照。
+
+### どのフォルダから開いても有効にする
+
+このリポジトリ内では自動で有効です。**他のプロジェクトや任意のフォルダでも**
+有効にするには、自分のPCで一度だけ以下のどちらかを実行してください
+（`~/.claude/` に展開されます）:
+
+```bash
+# リポジトリをクローン済みの場合
+bash scripts/install-fable-skills.sh
+
+# クローンしていない場合（どこからでも1コマンド）
+git clone --depth 1 https://github.com/RenTonoduka/remotion-video-workflow /tmp/fvw && bash /tmp/fvw/scripts/install-fable-skills.sh && rm -rf /tmp/fvw
+```
+
+再実行すると最新版に更新されます（冪等）。
+不要になったら `bash scripts/install-fable-skills.sh --uninstall` で
+追加分だけがきれいに消えます（他の設定・スキルには触りません）。
+
 ## 設定
 
 `.claude/settings.json` でFPSやパスを設定:
