@@ -128,13 +128,20 @@ Fable と Opus 4.8 の差分分析は `.claude/skills/fable-core/references/fabl
 ### どのフォルダから開いても有効にする
 
 このリポジトリ内では自動で有効です。**他のプロジェクトや任意のフォルダでも**
-有効にするには、一度だけ以下を実行してください（`~/.claude/` に展開されます）:
+有効にするには、自分のPCで一度だけ以下のどちらかを実行してください
+（`~/.claude/` に展開されます）:
 
 ```bash
+# リポジトリをクローン済みの場合
 bash scripts/install-fable-skills.sh
+
+# クローンしていない場合（どこからでも1コマンド）
+git clone --depth 1 https://github.com/RenTonoduka/remotion-video-workflow /tmp/fvw && bash /tmp/fvw/scripts/install-fable-skills.sh && rm -rf /tmp/fvw
 ```
 
 再実行すると最新版に更新されます（冪等）。
+不要になったら `bash scripts/install-fable-skills.sh --uninstall` で
+追加分だけがきれいに消えます（他の設定・スキルには触りません）。
 
 ## 設定
 
