@@ -61,6 +61,15 @@
     }
   },
   "skills": {
+    "fable-core": {
+      "description": "Fable品質の思考原則。Opus 4.8でFable相当の判断力・コミュニケーション品質を再現するための行動ルール。"
+    },
+    "fable-check": {
+      "description": "Fable級の抜け漏れ検査。コード変更完了前に必ず実行する網羅的チェックリスト。"
+    },
+    "fable-refactor": {
+      "description": "Fable級のリファクタリング手順。挙動を変えずに構造を改善し、fable-checkで完了検査する。"
+    },
     "srt-rules": {
       "description": "SRT変換のルールと基準。タイムスタンプ変換、style自動判定、highlight抽出の知識を提供。"
     },
