@@ -1,0 +1,537 @@
+{
+ "fps": 30,
+ "total": 9086,
+ "scenes": [
+  {
+   "id": "title",
+   "start": 0,
+   "frames": 394,
+   "lines": [
+    {
+     "file": "voice/title_00.wav",
+     "text": "Wodaneへようこそ。",
+     "from": 15,
+     "frames": 35
+    },
+    {
+     "file": "voice/title_01.wav",
+     "text": "今日は、Wodaneの通い方、グランドルールをご紹介します。",
+     "from": 60,
+     "frames": 122
+    },
+    {
+     "file": "voice/title_02.wav",
+     "text": "最初から全部を覚えなくて大丈夫です。わからないことは、いつでもスタッフに聞いてくださいね。",
+     "from": 192,
+     "frames": 181
+    }
+   ]
+  },
+  {
+   "id": "shoes",
+   "start": 394,
+   "frames": 105,
+   "lines": [
+    {
+     "file": "voice/shoes_00.wav",
+     "text": "まず、入口で靴を脱ぎましょう。",
+     "from": 15,
+     "frames": 69
+    }
+   ]
+  },
+  {
+   "id": "greet",
+   "start": 499,
+   "frames": 170,
+   "lines": [
+    {
+     "file": "voice/greet_00.wav",
+     "text": "スタッフと挨拶をしましょう。",
+     "from": 15,
+     "frames": 52
+    },
+    {
+     "file": "voice/greet_01.wav",
+     "text": "挨拶は、1日の始まりです。",
+     "from": 78,
+     "frames": 71
+    }
+   ]
+  },
+  {
+   "id": "alcohol",
+   "start": 669,
+   "frames": 246,
+   "lines": [
+    {
+     "file": "voice/alcohol_00.wav",
+     "text": "入口で、アルコール消毒をしましょう。",
+     "from": 15,
+     "frames": 80
+    },
+    {
+     "file": "voice/alcohol_01.wav",
+     "text": "アルコールで手が荒れてしまう方は、石鹸でよく手を洗いましょう。",
+     "from": 106,
+     "frames": 120
+    }
+   ]
+  },
+  {
+   "id": "seat",
+   "start": 915,
+   "frames": 141,
+   "lines": [
+    {
+     "file": "voice/seat_00.wav",
+     "text": "PCを受け取ったら、座る席を決めて座りましょう。",
+     "from": 15,
+     "frames": 105
+    }
+   ]
+  },
+  {
+   "id": "login",
+   "start": 1056,
+   "frames": 240,
+   "lines": [
+    {
+     "file": "voice/login_00.wav",
+     "text": "PCの電源を入れます。",
+     "from": 15,
+     "frames": 51
+    },
+    {
+     "file": "voice/login_01.wav",
+     "text": "ネット上のWodaneのシステムを開いて、自分の会員番号をタップします。",
+     "from": 76,
+     "frames": 142
+    }
+   ]
+  },
+  {
+   "id": "pin",
+   "start": 1296,
+   "frames": 340,
+   "lines": [
+    {
+     "file": "voice/pin_00.wav",
+     "text": "一番最初に、4桁の数字を設定します。",
+     "from": 15,
+     "frames": 100
+    },
+    {
+     "file": "voice/pin_01.wav",
+     "text": "ログインするときに毎回必要になりますので、忘れない数字にして、必ずメモを取っておきましょう。",
+     "from": 126,
+     "frames": 194
+    }
+   ]
+  },
+  {
+   "id": "arrive",
+   "start": 1636,
+   "frames": 300,
+   "lines": [
+    {
+     "file": "voice/arrive_00.wav",
+     "text": "ログインすると、来た時間を記録するボタンがあります。",
+     "from": 15,
+     "frames": 104
+    },
+    {
+     "file": "voice/arrive_01.wav",
+     "text": "一度だけ、タップしましょう。これで、皆さんが来た時間を記録できます。",
+     "from": 130,
+     "frames": 149
+    }
+   ]
+  },
+  {
+   "id": "task",
+   "start": 1936,
+   "frames": 288,
+   "lines": [
+    {
+     "file": "voice/task_00.wav",
+     "text": "その日に行う案件を選びます。",
+     "from": 15,
+     "frames": 66
+    },
+    {
+     "file": "voice/task_01.wav",
+     "text": "一番最初はスタッフと一緒に選びますので、少しずつ、できることを増やしていきましょう。",
+     "from": 91,
+     "frames": 176
+    }
+   ]
+  },
+  {
+   "id": "lunch",
+   "start": 2224,
+   "frames": 360,
+   "lines": [
+    {
+     "file": "voice/lunch_00.wav",
+     "text": "お昼休みは、12時から13時です。",
+     "from": 15,
+     "frames": 99
+    },
+    {
+     "file": "voice/lunch_01.wav",
+     "text": "飲食は、大きな音や強いにおいなど、周りの方のご迷惑にならない範囲で、いつでもしていただけます。",
+     "from": 124,
+     "frames": 215
+    }
+   ]
+  },
+  {
+   "id": "drink",
+   "start": 2584,
+   "frames": 463,
+   "lines": [
+    {
+     "file": "voice/drink_00.wav",
+     "text": "ビンやカンは、お持ち込みができません。",
+     "from": 15,
+     "frames": 73
+    },
+    {
+     "file": "voice/drink_01.wav",
+     "text": "お飲み物は、タンブラーやペットボトルなど、フタができて、倒れても中身がこぼれないものでお願いします。",
+     "from": 98,
+     "frames": 204
+    },
+    {
+     "file": "voice/drink_02.wav",
+     "text": "ペットボトルや生ごみは捨てられないため、各自でお持ち帰りください。",
+     "from": 313,
+     "frames": 129
+    }
+   ]
+  },
+  {
+   "id": "finish",
+   "start": 3047,
+   "frames": 464,
+   "lines": [
+    {
+     "file": "voice/finish_00.wav",
+     "text": "作業が終わったら、スタッフに声をかけてください。",
+     "from": 15,
+     "frames": 97
+    },
+    {
+     "file": "voice/finish_01.wav",
+     "text": "スタッフが作成した、サービス提供記録が、画面に表示されます。",
+     "from": 122,
+     "frames": 141
+    },
+    {
+     "file": "voice/finish_02.wav",
+     "text": "来た時間や記録の内容を確認して、問題がなければ、確認ボタンを押してください。",
+     "from": 274,
+     "frames": 169
+    }
+   ]
+  },
+  {
+   "id": "return",
+   "start": 3511,
+   "frames": 352,
+   "lines": [
+    {
+     "file": "voice/return_00.wav",
+     "text": "システムを閉じて、PCの電源を切ります。",
+     "from": 15,
+     "frames": 93
+    },
+    {
+     "file": "voice/return_01.wav",
+     "text": "PCをアルコールウエットティッシュで軽く拭いて、机もきれいに拭いてから、PCをスタッフに返却してください。",
+     "from": 119,
+     "frames": 213
+    }
+   ]
+  },
+  {
+   "id": "next",
+   "start": 3863,
+   "frames": 121,
+   "lines": [
+    {
+     "file": "voice/next_00.wav",
+     "text": "次に通所する日にちを、確認しましょう。",
+     "from": 15,
+     "frames": 85
+    }
+   ]
+  },
+  {
+   "id": "belongings",
+   "start": 3984,
+   "frames": 236,
+   "lines": [
+    {
+     "file": "voice/belongings_00.wav",
+     "text": "スマホや貴重品など、忘れ物がないことを確認してから、自分の靴をまちがえないように履きましょう。",
+     "from": 15,
+     "frames": 200
+    }
+   ]
+  },
+  {
+   "id": "rain",
+   "start": 4220,
+   "frames": 291,
+   "lines": [
+    {
+     "file": "voice/rain_00.wav",
+     "text": "雨の日は、傘の忘れ物をしないように気をつけてください。",
+     "from": 15,
+     "frames": 114
+    },
+    {
+     "file": "voice/rain_01.wav",
+     "text": "ビルの入口が濡れていますので、足元に気をつけてお帰りください。",
+     "from": 140,
+     "frames": 130
+    }
+   ]
+  },
+  {
+   "id": "seeyou",
+   "start": 4511,
+   "frames": 137,
+   "lines": [
+    {
+     "file": "voice/seeyou_00.wav",
+     "text": "またすぐに、Wodaneで会えるのを、お待ちしています。",
+     "from": 15,
+     "frames": 101
+    }
+   ]
+  },
+  {
+   "id": "other",
+   "start": 4648,
+   "frames": 145,
+   "lines": [
+    {
+     "file": "voice/other_00.wav",
+     "text": "ここからは、知っておくと安心なルールをご紹介します。",
+     "from": 15,
+     "frames": 109
+    }
+   ]
+  },
+  {
+   "id": "toilet",
+   "start": 4793,
+   "frames": 313,
+   "lines": [
+    {
+     "file": "voice/toilet_00.wav",
+     "text": "お手洗いは、手前が男性トイレ、奥が女性トイレです。",
+     "from": 15,
+     "frames": 122
+    },
+    {
+     "file": "voice/toilet_01.wav",
+     "text": "トイレの中で鉢合わせたくない場合は、必ず内側から鍵をかけましょう。",
+     "from": 147,
+     "frames": 145
+    }
+   ]
+  },
+  {
+   "id": "toilet2",
+   "start": 5106,
+   "frames": 462,
+   "lines": [
+    {
+     "file": "voice/toilet2_00.wav",
+     "text": "お手洗いは、長時間の利用などで他の方の迷惑にならないよう、できるだけスムーズに利用しましょう。",
+     "from": 15,
+     "frames": 202
+    },
+    {
+     "file": "voice/toilet2_01.wav",
+     "text": "もし体調が優れないときは、早退しても構いません。無理をせず、気軽にスタッフに声をかけてください。",
+     "from": 227,
+     "frames": 214
+    }
+   ]
+  },
+  {
+   "id": "wash",
+   "start": 5568,
+   "frames": 382,
+   "lines": [
+    {
+     "file": "voice/wash_00.wav",
+     "text": "石鹸で手を洗ったら、ペーパータオルで手をよく拭いてから、ドアノブを触りましょう。",
+     "from": 15,
+     "frames": 162
+    },
+    {
+     "file": "voice/wash_01.wav",
+     "text": "次の方が気持ちよく使えるよう、いつもきれいに使ってくださって、ありがとうございます。",
+     "from": 187,
+     "frames": 173
+    }
+   ]
+  },
+  {
+   "id": "window",
+   "start": 5950,
+   "frames": 619,
+   "lines": [
+    {
+     "file": "voice/window_00.wav",
+     "text": "窓際に座るときは、日焼け止めを塗りましょう。",
+     "from": 15,
+     "frames": 93
+    },
+    {
+     "file": "voice/window_01.wav",
+     "text": "日光や人の目が気になる方は、室内側の席に座りましょう。",
+     "from": 118,
+     "frames": 127
+    },
+    {
+     "file": "voice/window_02.wav",
+     "text": "日光や蛍光灯、画面の光が苦手な方は、室内でカラーグラスをかけていただいても大丈夫です。",
+     "from": 256,
+     "frames": 202
+    },
+    {
+     "file": "voice/window_03.wav",
+     "text": "空気の入れ替えで窓を開けたいときは、スタッフに声をかけてください。",
+     "from": 469,
+     "frames": 129
+    }
+   ]
+  },
+  {
+   "id": "gear",
+   "start": 6569,
+   "frames": 721,
+   "lines": [
+    {
+     "file": "voice/gear_00.wav",
+     "text": "PCでイヤホンを使いたい方は、3.5ミリのミニプラグのイヤホンが差し込めます。",
+     "from": 15,
+     "frames": 159
+    },
+    {
+     "file": "voice/gear_01.wav",
+     "text": "マウスを使いたい方は、ご自宅からご自身のものをお持ちください。",
+     "from": 185,
+     "frames": 124
+    },
+    {
+     "file": "voice/gear_02.wav",
+     "text": "週4日や週5日など、通う日が多い方は、毎回持ち帰るのが大変ですよね。",
+     "from": 319,
+     "frames": 177
+    },
+    {
+     "file": "voice/gear_03.wav",
+     "text": "ご要望が多ければ、Wodaneで鍵付きの小さなロッカーをご用意します。ぜひリクエストをくださいね。",
+     "from": 506,
+     "frames": 193
+    }
+   ]
+  },
+  {
+   "id": "ribbon",
+   "start": 7290,
+   "frames": 618,
+   "lines": [
+    {
+     "file": "voice/ribbon_00.wav",
+     "text": "他の利用者さんと交流したい方には、目印として、腕にリボンをしていただきます。",
+     "from": 15,
+     "frames": 165
+    },
+    {
+     "file": "voice/ribbon_01.wav",
+     "text": "リボンをしている人同士は、作業の妨げにならないよう気を配りながら、話しかけていただいて構いません。",
+     "from": 190,
+     "frames": 199
+    },
+    {
+     "file": "voice/ribbon_02.wav",
+     "text": "トラブル防止のため、利用者さん同士の連絡先の交換は、原則禁止ですのでご注意ください。",
+     "from": 400,
+     "frames": 197
+    }
+   ]
+  },
+  {
+   "id": "noribbon",
+   "start": 7908,
+   "frames": 538,
+   "lines": [
+    {
+     "file": "voice/noribbon_00.wav",
+     "text": "知らない方に話しかけられると、集中が途切れたり、驚いてしまう方もいらっしゃいます。",
+     "from": 15,
+     "frames": 171
+    },
+    {
+     "file": "voice/noribbon_01.wav",
+     "text": "リボンをしていない方は、一人で集中したい方ですので、できるだけ声をかけないよう、お心づかいをお願いします。",
+     "from": 197,
+     "frames": 223
+    },
+    {
+     "file": "voice/noribbon_02.wav",
+     "text": "何かあれば、スタッフに声をかけてください。",
+     "from": 430,
+     "frames": 87
+    }
+   ]
+  },
+  {
+   "id": "anytime",
+   "start": 8446,
+   "frames": 152,
+   "lines": [
+    {
+     "file": "voice/anytime_00.wav",
+     "text": "その他、気になることがあれば、いつでも声をかけてください。",
+     "from": 15,
+     "frames": 116
+    }
+   ]
+  },
+  {
+   "id": "vision",
+   "start": 8598,
+   "frames": 488,
+   "lines": [
+    {
+     "file": "voice/vision_00.wav",
+     "text": "皆さんにとって、きれいで居心地の良い場所であり続けられるよう、みんなで、港区に根付く種になる。",
+     "from": 15,
+     "frames": 200
+    },
+    {
+     "file": "voice/vision_01.wav",
+     "text": "AIエージェントで、人の可能性を拡張する。",
+     "from": 226,
+     "frames": 100
+    },
+    {
+     "file": "voice/vision_02.wav",
+     "text": "Wodaneといっしょに、これからできること、楽しいことを、たくさん。",
+     "from": 336,
+     "frames": 130
+    }
+   ]
+  }
+ ]
+}
