@@ -162,8 +162,8 @@
     {
       "id": "drink",
       "chapter": "作業中",
-      "photo": "c06",
-      "visual": null,
+      "photo": null,
+      "visual": "drinks",
       "tag": "お飲み物とごみ",
       "title": "フタのできる容器でお願いします",
       "points": [
@@ -355,8 +355,8 @@
     {
       "id": "gear",
       "chapter": "その他",
-      "photo": "earphone",
-      "visual": null,
+      "photo": null,
+      "visual": "gear",
       "tag": "イヤホン・マウス",
       "title": "自分の道具を使えます",
       "points": [
@@ -369,8 +369,7 @@
         "マウスを使いたい方は、ご自宅からご自身のものをお持ちください。",
         "週4日や週5日など、通う日が多い方は、毎回持ち帰るのが大変ですよね。",
         "ご要望が多ければ、Wodaneで鍵付きの小さなロッカーをご用意します。ぜひリクエストをくださいね。"
-      ],
-      "photoFit": "contain"
+      ]
     },
     {
       "id": "ribbon",

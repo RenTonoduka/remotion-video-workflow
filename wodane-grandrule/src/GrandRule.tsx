@@ -127,7 +127,36 @@ const Card: React.FC<{ style?: React.CSSProperties; children: React.ReactNode; a
   </div>
 );
 
-const IconCircle: React.FC<{ icon: LucideIcon; size?: number; delay?: number; accent?: boolean }> = ({
+type IconType = React.ComponentType<{ size?: number; color?: string; strokeWidth?: number }>;
+
+// lucide に無いアイコン（同じ線の太さ・角丸で描く）
+const svgProps = (size = 24, color = 'currentColor', strokeWidth = 2) => ({
+  width: size,
+  height: size,
+  viewBox: '0 0 24 24',
+  fill: 'none',
+  stroke: color,
+  strokeWidth,
+  strokeLinecap: 'round' as const,
+  strokeLinejoin: 'round' as const,
+});
+const PetBottle: IconType = ({ size, color, strokeWidth }) => (
+  <svg {...svgProps(size, color, strokeWidth)}>
+    <rect x="9.5" y="1.8" width="5" height="2.6" rx="0.6" />
+    <path d="M10 4.4v1.4c0 1.2-3 2.2-3 4.6V20a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V10.4c0-2.4-3-3.4-3-4.6V4.4" />
+    <path d="M7 13h10M7 17.5h10" />
+  </svg>
+);
+const Tumbler: IconType = ({ size, color, strokeWidth }) => (
+  <svg {...svgProps(size, color, strokeWidth)}>
+    <path d="M5.5 6.5h13" />
+    <path d="M7 3.5h10a1.5 1.5 0 0 1 1.5 1.5v1.5h-13V5A1.5 1.5 0 0 1 7 3.5z" />
+    <path d="M6.6 6.5l1.2 13.7a2 2 0 0 0 2 1.8h4.4a2 2 0 0 0 2-1.8l1.2-13.7" />
+    <path d="M7.3 11.5h9.4" />
+  </svg>
+);
+
+const IconCircle: React.FC<{ icon: IconType; size?: number; delay?: number; accent?: boolean }> = ({
   icon: Icon,
   size = 120,
   delay = 0,
@@ -332,7 +361,7 @@ const Visual: React.FC<{ kind: string; scene: TimedScene }> = ({ kind, scene }) 
     );
   }
   if (kind === 'check') {
-    const items: [LucideIcon, string][] = [
+    const items: [IconType, string][] = [
       [Smartphone, 'スマホ'],
       [Wallet, '貴重品'],
       [Footprints, '自分の靴'],
@@ -352,6 +381,47 @@ const Visual: React.FC<{ kind: string; scene: TimedScene }> = ({ kind, scene }) 
           );
         })}
       </Card>
+    );
+  }
+  if (kind === 'drinks') {
+    const items: [IconType, string][] = [
+      [PetBottle, 'ペットボトル'],
+      [Tumbler, 'タンブラー'],
+    ];
+    const show = interpolate(frame, [lineAt(1), lineAt(1) + 12], [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
+    return (
+      <div style={col}>
+        <div style={{ display: 'flex', gap: 28 }}>
+          {items.map(([icon, t], i) => (
+            <Card key={t} style={{ ...col, width: 300, padding: '40px 16px', gap: 22 }}>
+              <IconCircle icon={icon} size={190} delay={lineAt(1) + i * 10} />
+              {label(t, 36)}
+            </Card>
+          ))}
+        </div>
+        <div style={{ opacity: show, fontFamily: JP, fontWeight: 800, fontSize: 32, color: C.deep, textAlign: 'center' }}>
+          <Rich text="**フタができて、こぼれないもの**" />
+        </div>
+      </div>
+    );
+  }
+  if (kind === 'gear') {
+    const items: [string, string, number][] = [
+      ['earphone', 'イヤホン', lineAt(0)],
+      ['mouse', 'マウス', lineAt(1)],
+    ];
+    return (
+      <div style={{ display: 'flex', gap: 28 }}>
+        {items.map(([src, t, at]) => {
+          const k = spring({ frame: frame - at, fps: 30, config: { damping: 14 } });
+          return (
+            <Card key={src} style={{ ...col, width: 310, padding: '30px 16px', gap: 18, opacity: k, transform: `translateY(${(1 - k) * 30}px)` }}>
+              <Img src={staticFile(`photos/${src}.jpg`)} style={{ width: 260, height: 300, objectFit: 'contain' }} />
+              {label(t, 32)}
+            </Card>
+          );
+        })}
+      </div>
     );
   }
   if (kind === 'ribbon') {
@@ -424,10 +494,35 @@ const Subtitle: React.FC<{ scene: TimedScene }> = ({ scene }) => {
 };
 
 // ---------- スライド ----------
+const CHAPTERS = ['来たとき', '作業のはじめ', '作業中', '帰るとき', 'その他'];
+
 const Header: React.FC<{ section: string; no: number }> = ({ section, no }) => (
   <>
-    <div style={{ position: 'absolute', top: 44, left: 64 }}>
-      <Pill>{section}</Pill>
+    <div style={{ position: 'absolute', top: 40, left: 64, display: 'flex', alignItems: 'center', gap: 12 }}>
+      {CHAPTERS.includes(section) ? (
+        CHAPTERS.map((c) => {
+          const on = c === section;
+          return (
+            <span
+              key={c}
+              style={{
+                fontFamily: JP,
+                fontWeight: 800,
+                fontSize: 24,
+                padding: '7px 22px',
+                borderRadius: 999,
+                background: on ? C.green : C.white,
+                color: on ? C.white : C.muted,
+                border: `2px solid ${on ? C.green : C.border}`,
+              }}
+            >
+              {c}
+            </span>
+          );
+        })
+      ) : (
+        <Pill>{section}</Pill>
+      )}
     </div>
     <div style={{ position: 'absolute', top: 52, right: 70, fontFamily: EN, fontWeight: 800, fontSize: 22, color: C.muted, letterSpacing: 2 }}>
       Wodane&nbsp;&nbsp;{String(no).padStart(2, '0')} / {script.scenes.length}
